@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BackendController!{% endblock %}
+
+{% block body %}
+
+<a href="{{ path('app_logout')}}">{{ app.user.prenom }} {{ app.user.nom }}</a>
+
+{% if is_granted('ROLE_USER') %}
+ <h2>user</h2>
+{% endif %}
+
+{% if is_granted('ROLE_ADMIN') %}
+ <h2>ADMIN</h2>
+{% endif %}
+
+
+{% endblock %}
